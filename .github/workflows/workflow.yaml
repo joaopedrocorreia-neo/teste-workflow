@@ -10,12 +10,6 @@ jobs:
     if: startsWith(github.head_ref, 'recup/')
     runs-on: ubuntu-latest
     steps:
-      - name: Debug context
-        run: |
-          echo "head_ref: ${{ github.head_ref }}"
-          echo "base_ref: ${{ github.base_ref }}"
-          echo "ref: ${{ github.ref }}"
-
       - name: Checkout code
         uses: actions/checkout@v3
       
@@ -24,5 +18,8 @@ jobs:
         with:
           python-version: '3.x'
       
+      - name: Clone validator repository
+        run: git clone git@github.com:neospace-ai/DataHug.git && cd ./DataHug && git checkout feat/validation2 && pip install -r requirements.txt
+      
       - name: Run validator script
-        run: python test.py
+        run: python src/techniques/neoflow_validators/recup_validation.py

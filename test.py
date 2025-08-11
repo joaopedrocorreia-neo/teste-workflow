@@ -1,1 +1,1 @@
-raise ValueError('testando')
+print('teste')
