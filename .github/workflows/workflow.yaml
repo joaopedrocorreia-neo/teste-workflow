@@ -26,4 +26,6 @@ jobs:
           python -m pip install -r requirements.txt
       
       - name: Run validator script
+        env:
+          PYTHONPATH: ${{ github.workspace }}/datahug
         run: python datahug/src/techniques/neoflow_validators/recup_validation.py
