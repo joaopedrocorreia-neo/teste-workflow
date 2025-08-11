@@ -3,10 +3,11 @@ name: Teste Workflow
 on:
   pull_request:
     branches:
-      - 'recup/**'
+      - 'main'
 
 jobs:
   teste-workflow: # nome do job
+    if: github.head_ref == 'recup/**'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
