@@ -20,10 +20,10 @@ jobs:
       
       - name: Clone validator repository
         run: |
-          git clone https://x-access-token:${{ secrets.REPO_SECRETS }}@github.com/neospace-ai/DataHug.git
-          cd ./DataHug
+          git clone https://x-access-token:${{ secrets.REPO_SECRETS }}@github.com/neospace-ai/DataHug.git ./datahug
+          cd ./datahug
           git checkout feat/validation2
           python -m pip install -r requirements.txt
       
       - name: Run validator script
-        run: python src/techniques/neoflow_validators/recup_validation.py
+        run: python datahug/src/techniques/neoflow_validators/recup_validation.py
