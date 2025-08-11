@@ -1,0 +1,21 @@
+name: Teste Workflow
+
+on:
+  pull_request:
+    branches:
+      - 'recup/**'
+
+jobs:
+  teste-workflow: # nome do job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Set up python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+      
+      - name: Run validator script
+        run: python test.py
