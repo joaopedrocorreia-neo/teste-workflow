@@ -20,7 +20,7 @@ jobs:
       
       - name: Clone validator repository
         run: |
-          git clone git clone https://x-access-token:${{ secrets.REPO_SECRETS }}@github.com/neospace-ai/DataHug.git
+          git clone https://x-access-token:${{ secrets.REPO_SECRETS }}@github.com/neospace-ai/DataHug.git
           cd ./DataHug
           git checkout feat/validation2
           python -m pip install -r requirements.txt
