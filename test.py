@@ -1,2 +1,1 @@
-print('teste2AAAAAAAAAAAAAAAAAAAAAAAAAAAlllllllllllllllllllllllllllllllllllll')
-raise ValueError('lasmlaslksaa')
+print('teste2AAAAAAAAAAAAAAAAAAAAAAAAAAA')
